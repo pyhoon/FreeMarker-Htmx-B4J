@@ -1,14 +1,12 @@
 ﻿AppType=StandardJava
 Build1=Default,b4j.miniserver
-File1=index.html
-FileGroup1=Default Group
 Group=Default Group
 Library1=jcore
 Library2=jserver
 Library3=freemarkerwrapper
 Module1=Index
 Module2=MallHandler
-NumberOfFiles=1
+NumberOfFiles=0
 NumberOfLibraries=3
 NumberOfModules=2
 Version=10.5
