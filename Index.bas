@@ -29,13 +29,16 @@ Sub Handle (req As ServletRequest, resp As ServletResponse)
 	Else
 		Dim List1 As List
 		List1.Initialize
-		List1.Add("Province 1")
-		List1.Add("Province 2")
-		List1.Add("Province 3")
+		'List1.Add("Province 1")
+		'List1.Add("Province 2")
+		'List1.Add("Province 3")
+		List1.Add(CreateMap("province": "Province 1"))
+		List1.Add(CreateMap("province": "Province 2"))
+		List1.Add(CreateMap("province": "Province 3"))
 		Dim FM As Freemarker
 		FM.Initialize
 		FM.DirectoryForTemplateLoading = File.Combine(File.DirApp, "templates")
 		Dim TM As Template = FM.getTemplate("index.html")
-		Response.Write(TM.stdOut(CreateMap("provincetable": List1)))
+		Response.Write(TM.stdOut(CreateMap("provincetables": List1)))
 	End If
 End Sub
