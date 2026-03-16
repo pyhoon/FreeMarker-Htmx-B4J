@@ -1,0 +1,35 @@
+﻿AppType=StandardJava
+Build1=Default,b4j.miniserver
+File1=index.html
+FileGroup1=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jserver
+Library3=freemarkerwrapper
+Module1=Index
+Module2=MallHandler
+NumberOfFiles=1
+NumberOfLibraries=3
+NumberOfModules=2
+Version=10.5
+@EndOfDesignText@
+'Non-UI application (console application)
+#Region  Project Attributes 
+	#CommandLineArgs:
+	#MergeLibraries: true 
+#End Region
+#AdditionalJar: freemarker-2.3.31
+Sub Process_Globals
+	Private srvr As Server
+End Sub
+
+' <link>Click to browse|http://127.0.0.1:8080</link>
+Sub AppStart (Args() As String)
+	srvr.Initialize("")
+	srvr.AddHandler("", "Index", False)
+	srvr.AddHandler("/provinces", "Index", False)
+	srvr.AddHandler("/malladd", "MallHandler", False) ' POST
+	srvr.Start
+	Log("Server started")
+	StartMessageLoop
+End Sub
